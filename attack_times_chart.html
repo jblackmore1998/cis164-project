@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "bar", "color": "rgb(255,165,128)"}, "encoding": {"x": {"field": "Time", "type": "ordinal"}, "y": {"field": "Number of Attacks", "type": "quantitative"}}}, {"mark": {"type": "rule", "color": "black"}, "encoding": {"y": {"aggregate": "mean", "field": "Number of Attacks", "type": "quantitative"}}}], "data": {"name": "data-bedb5947a0b9549a240d1b5613eaaa6b"}, "width": 900, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-bedb5947a0b9549a240d1b5613eaaa6b": [{"Time": "10:00", "Number of Attacks": 5}, {"Time": "10:15", "Number of Attacks": 3}, {"Time": "10:30", "Number of Attacks": 3}, {"Time": "10:40", "Number of Attacks": 1}, {"Time": "10:45", "Number of Attacks": 1}, {"Time": "11:00", "Number of Attacks": 18}, {"Time": "11:10", "Number of Attacks": 1}, {"Time": "11:15", "Number of Attacks": 3}, {"Time": "11:20", "Number of Attacks": 1}, {"Time": "11:30", "Number of Attacks": 5}, {"Time": "12:00", "Number of Attacks": 9}, {"Time": "12:30", "Number of Attacks": 1}, {"Time": "12:40", "Number of Attacks": 1}, {"Time": "12:45", "Number of Attacks": 2}, {"Time": "13:00", "Number of Attacks": 5}, {"Time": "13:30", "Number of Attacks": 9}, {"Time": "13:35", "Number of Attacks": 1}, {"Time": "13:45", "Number of Attacks": 1}, {"Time": "14:00", "Number of Attacks": 10}, {"Time": "14:15", "Number of Attacks": 1}, {"Time": "14:30", "Number of Attacks": 6}, {"Time": "15:00", "Number of Attacks": 6}, {"Time": "15:15", "Number of Attacks": 2}, {"Time": "15:30", "Number of Attacks": 3}, {"Time": "16:00", "Number of Attacks": 5}, {"Time": "16:30", "Number of Attacks": 6}, {"Time": "16:45", "Number of Attacks": 1}, {"Time": "17:00", "Number of Attacks": 7}, {"Time": "17:30", "Number of Attacks": 10}, {"Time": "17:42", "Number of Attacks": 1}, {"Time": "18:00", "Number of Attacks": 1}, {"Time": "18:30", "Number of Attacks": 3}, {"Time": "18:45", "Number of Attacks": 1}, {"Time": "19:00", "Number of Attacks": 1}, {"Time": "19:30", "Number of Attacks": 1}, {"Time": "20:00", "Number of Attacks": 1}, {"Time": "20:15", "Number of Attacks": 1}, {"Time": "20:30", "Number of Attacks": 1}, {"Time": "22:30", "Number of Attacks": 1}, {"Time": "23:00", "Number of Attacks": 2}, {"Time": "6:45", "Number of Attacks": 1}, {"Time": "7:00", "Number of Attacks": 5}, {"Time": "7:15", "Number of Attacks": 2}, {"Time": "7:30", "Number of Attacks": 8}, {"Time": "8:00", "Number of Attacks": 3}, {"Time": "8:30", "Number of Attacks": 6}, {"Time": "8:45", "Number of Attacks": 1}, {"Time": "9:00", "Number of Attacks": 12}, {"Time": "9:15", "Number of Attacks": 1}, {"Time": "9:30", "Number of Attacks": 4}, {"Time": "9:45", "Number of Attacks": 1}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
